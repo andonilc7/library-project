@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #F2F2F2;
+}
+
+.header {
+  box-shadow: 3px 3px 5px rgba(0,0,0,.123);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: start;
+  padding-left: 20px;
+  background-color: white;
+}
+
+.main-container {
+  
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.add-book {
+  justify-self: center;
+  width: 120px;
+  height: 55px;
+  background-color: rgb(180, 180, 180);
+  border: 1px solid rgb(180, 180, 180);
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.read-container {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-template-rows: 1fr;
+  gap: 20px;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 15px;
+}
+
+#read {
+  margin: 0;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
+  margin: 20px;
+  gap: 15px;
+
+  
+}
+
+.book-card {
+  border: 1px solid black;
+  border-radius: 5px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  background-color: white;
+  gap: 5px;
+}
+
+
+/* dialog */
+dialog {
+  width: 300px;
+  height: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  border:none;
+  border-radius: 5px;
+}
+
+.close-dialog-btn {
+  outline: none;
+  position: absolute;
+  right:7px;
+  top: 7px;
+  height: 20px;
+  width: 40px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+dialog h3 {
+  padding: 5px 10px;
+  font-size: 1rem;
+  background-color: rgb(227, 227, 227);
+}
+
+.book-form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  align-items: center;
+}
+
+.book-form input {
+  padding: 10px;
+  margin-bottom: 15px;
+  align-content: center;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.book-form input[type="submit"] {
+  background-color: lightblue;
+  font-weight: bold;
+}
