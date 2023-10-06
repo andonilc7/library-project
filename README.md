@@ -1,1 +1,2 @@
 # library-project
+Library project from Odin Project's curriculum. I have two starter books and you can add and remove books, as well as toggle the read status of each of the books. Layout mostly with css grid. This project was mostly to practice my abilities with objects and displaying them, also with input from a form and relating that input to initialize objects.
