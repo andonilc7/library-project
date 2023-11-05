@@ -1,3 +1,14 @@
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
+  
+  
+}
+
 let myLibrary = [];
 const bookGrid = document.querySelector('.book-grid');
 const odyssey = new Book("The Odyssey", "Homer", 300, true);
@@ -9,13 +20,7 @@ let toggleReadButtons = document.querySelectorAll('.read-toggle');
 addBookToLibrary(odyssey);
 addBookToLibrary(secretHistory);
 
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-  
-}
+
 function removeAllChildNodes(parent) {
   while (parent.firstChild) {
     parent.removeChild(parent.firstChild);
