@@ -17,6 +17,7 @@ let removeButtons = document.querySelectorAll('.remove-button');
 let toggleReadButtons = document.querySelectorAll('.read-toggle');
 
 
+
 addBookToLibrary(odyssey);
 addBookToLibrary(secretHistory);
 
@@ -83,24 +84,43 @@ const closeDialogBtn = document.querySelector('.close-dialog-btn')
 
 
 const form = document.querySelector('.book-form');
+const bookFormSubmit = document.querySelector('.book-form-submit')
 
 
-form.addEventListener("submit", (event) => {
+bookFormSubmit.addEventListener("click", (event) => {
   event.preventDefault();
 
   // realized that need to call variable.value instead of using .value in variable!!!
-  let title = document.querySelector('#title');
-  let author = document.querySelector('#author');
-  let numOfPages = document.querySelector('#num-of-pages');
-  let read = document.querySelector('#read');
-  let newBook = new Book(title.value, author.value, numOfPages.value, read.checked);
-  addBookToLibrary(newBook);
-  author.value = '';
-  title.value='';
-  numOfPages.value='';
-  read.value='';
+  const title = document.querySelector('#title');
+  const author = document.querySelector('#author');
+  const numOfPages = document.querySelector('#num-of-pages');
+  const read = document.querySelector('#read');
+
+  if(title.validity.valueMissing) {
+    title.setCustomValidity("Enter a title!!!")
+    title.reportValidity();
+  } else if(author.validity.valueMissing) {
+    author.setCustomValidity("Enter the name of the author!!!")
+    author.reportValidity()
+  } else if (numOfPages.validity.valueMissing){
+    numOfPages.setCustomValidity("Enter the number of pages!!!")
+    numOfPages.reportValidity()
+  } else if (numOfPages.validity.typeMismatch){
+    numOfPages.setCustomValidity('No letter, only numbers!')
+    numOfPages.reportValidity()
+  }
+    else {
+
+    let newBook = new Book(title.value, author.value, numOfPages.value, read.checked);
+    addBookToLibrary(newBook);
+    author.value = '';
+    title.value='';
+    numOfPages.value='';
+    read.value='';
+    dialog.close();
+  }
   
-  dialog.close();
+  
   
 })
 
